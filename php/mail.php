@@ -1,90 +1,111 @@
 <?php
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/autoload.php'; // Đường dẫn đến PHPMailer
+// Bật hiển thị lỗi để debug
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-// Hàm làm sạch dữ liệu đầu vào
-function sanitize_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
+// Tải PHPMailer
+if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
+    require __DIR__ . '/../vendor/autoload.php'; // Nếu dùng Composer
+} else {
+    require __DIR__ . '/../PHPMailer/src/Exception.php';
+    require __DIR__ . '/../PHPMailer/src/PHPMailer.php';
+    require __DIR__ . '/../PHPMailer/src/SMTP.php';
 }
 
 // Kiểm tra nếu form được submit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Lấy dữ liệu từ form và làm sạch
-    $name = sanitize_input($_POST['name']);
-    $name_furi = sanitize_input($_POST['name-furi']);
-    $email = sanitize_input($_POST['email']);
-    $confirm_email = sanitize_input($_POST['confirm-email']);
-    $contact_type = sanitize_input($_POST['contact-type']);
-    $message_details = sanitize_input($_POST['message-details']);
-    $privacy_agree = isset($_POST['privacy-agree']) ? 'Yes' : 'No';
+    // Lấy dữ liệu từ form
+    $name = htmlspecialchars(trim($_POST['name'] ?? ''));
+    $name_furi = htmlspecialchars(trim($_POST['name-furi'] ?? ''));
+    $email = htmlspecialchars(trim($_POST['email'] ?? ''));
+    $contact_type = htmlspecialchars(trim($_POST['contact-type'] ?? ''));
+    $message = htmlspecialchars(trim($_POST['message-details'] ?? ''));
+    $privacy_agree = isset($_POST['privacy-agree']) ? '同意する' : '同意しない';
 
     // Kiểm tra dữ liệu bắt buộc
     $errors = [];
+    
     if (empty($name)) {
-        $errors[] = "お名前は必須です。";
+        $errors[] = 'お名前は必須です。';
     }
+    
     if (empty($name_furi)) {
-        $errors[] = "お名前（フリガナ）は必須です。";
+        $errors[] = 'お名前（フリガナ）は必須です。';
     }
-    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "正しいメールアドレスを入力してください。";
+    
+    if (empty($email)) {
+        $errors[] = 'メールアドレスは必須です。';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = '正しいメールアドレスを入力してください。';
     }
-    if ($email !== $confirm_email) {
-        $errors[] = "メールアドレスが一致しません。";
-    }
+    
     if (empty($contact_type)) {
-        $errors[] = "問い合わせ種類を選択してください。";
+        $errors[] = '問い合わせ種類を選択してください。';
     }
-    if ($privacy_agree !== 'Yes') {
-        $errors[] = "プライバシーポリシーに同意してください。";
+
+    // Nếu có lỗi, hiển thị thông báo và dừng lại
+    if (!empty($errors)) {
+        $error_message = implode("\\n", $errors);
+        echo "<script>alert('以下のエラーがあります:\\n{$error_message}'); window.location.href='/xampp/Contact_Form/inquiry/contact.html';</script>";
+        exit();
     }
 
     // Nếu không có lỗi, tiến hành gửi email
-    if (empty($errors)) {
-        // Cấu hình email
-        $to = "np-hoan@jinso.co.jp"; // Địa chỉ email nhận
-        $subject = "お問い合わせ - 株式会社ABNEW";
-        $body = "お名前: $name\n";
-        $body .= "お名前（フリガナ）: $name_furi\n";
-        $body .= "メールアドレス: $email\n";
-        $body .= "問い合わせ種類: $contact_type\n";
-        $body .= "問い合わせ内容詳細:\n$message_details\n";
-        $body .= "プライバシーポリシー同意: $privacy_agree\n";
+    $mail = new PHPMailer(true);
 
-        // Tiêu đề email (hỗ trợ tiếng Nhật)
-        $headers = "From: $email\r\n";
-        $headers .= "Reply-To: $email\r\n";
-        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    try {
+        // Cấu hình server SMTP
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'hoantelseai2801@gmail.com';
+        $mail->Password = 'ttxzuowflyzjwvzh';
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
+
+        // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        // $mail->Port = 465;
+
+        // Bật debug
+        $mail->SMTPDebug = 2;
+        $mail->Debugoutput = 'html';
+
+        // Cấu hình email
+        $mail->setFrom('hoantelseai2801@gmail.com', 'ABNEW Contact Form');
+        $mail->addAddress('hoantelseai2801@gmail.com');
+
+        // Đặt mã hóa UTF-8 cho nội dung và tiêu đề
+        $mail->CharSet = 'UTF-8';
+        $mail->Encoding = 'base64';
+
+        // Nội dung email
+        $mail->isHTML(true);
+        // Mã hóa tiêu đề tiếng Nhật để hiển thị đúng
+        $mail->Subject = '=?UTF-8?B?' . base64_encode('お問い合わせ - 株式会社ABNEW') . '?=';
+        $mail->Body = "
+            <h2>お問い合わせ</h2>
+            <p><strong>お名前:</strong> $name</p>
+            <p><strong>お名前（フリガナ）:</strong> $name_furi</p>
+            <p><strong>メールアドレス:</strong> $email</p>
+            <p><strong>問い合わせ種類:</strong> $contact_type</p>
+            <p><strong>問い合わせ内容詳細:</strong> $message</p>
+            <p><strong>プライバシーポリシー同意:</strong> $privacy_agree</p>
+        ";
+        $mail->AltBody = "お名前: $name\nお名前（フリガナ）: $name_furi\nメールアドレス: $email\n問い合わせ種類: $contact_type\n問い合わせ内容詳細: $message\nプライバシーポリシー同意: $privacy_agree";
 
         // Gửi email
-        if (mail($to, $subject, $body, $headers)) {
-            // Chuyển hướng đến trang cảm ơn
-            header("Location: thank_you.html");
-            exit();
-        } else {
-            $errors[] = "メール送信に失敗しました。もう一度お試しください。";
-        }
-    }
-
-    // Nếu có lỗi, hiển thị lại form với thông báo lỗi
-    if (!empty($errors)) {
-        echo "<h2>エラー</h2>";
-        echo "<ul>";
-        foreach ($errors as $error) {
-            echo "<li>$error</li>";
-        }
-        echo "</ul>";
-        echo '<a href="contact.html">戻る</a>';
+        $mail->send();
+        echo "<script>alert('メールを送信しました！'); window.location.href='/xampp/Contact_Form/inquiry/contact.html';</script>";
+    } catch (Exception $e) {
+        echo "<script>alert('メール送信に失敗しました: {$mail->ErrorInfo}'); window.location.href='/xampp/Contact_Form/inquiry/contact.html';</script>";
     }
 } else {
-    // Nếu không phải POST, chuyển hướng về form
-    header("Location: contact.html");
+    // Nếu truy cập trực tiếp file mail.php
+    header("Location: /xampp/Contact_Form/inquiry/contact.html");
     exit();
 }
 ?>
