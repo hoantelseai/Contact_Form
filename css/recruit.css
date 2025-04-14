@@ -1,0 +1,142 @@
+.recruit-introduction {
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    background-color: #fff;
+    padding: 100px 90px 0;
+}
+
+.recruit-introduction h2 {
+    margin-bottom: 85px;
+}
+
+.recruit-introduction p {
+    text-align: justify;
+    margin: 0;
+    padding: 0;
+}
+
+.recruit-container {
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    padding: 100px 90px 0;
+}
+
+.recruit-div-wrap {
+    float: left;
+    overflow: hidden;
+    width: 48.5%;
+    height: auto;
+    margin: 0 50px 50px 0;
+}
+
+.recruit-div-wrap:nth-child(even) {
+    margin-right: 0;
+}
+
+.recruit-div.page {
+    width: 100%;
+}
+
+.recruit-title.page {
+    width: 80%;
+    left: 10%;
+}
+
+.recruit-div-title {
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    background: #3594a1;
+    color: #fff;
+    padding: 35px 45px;
+}
+
+.recruit_div-content a {
+    float: left;
+    overflow: hidden;
+    width: 100%;
+}
+
+.recruit_div-content img:hover {
+    transform: scale(1.2);
+    transition: transform 1s ease-in-out;
+}
+
+@media screen and (min-width:821px) and (max-width: 1865px) {
+
+    h3,
+    .recruit-title p.font-32 {
+        font-size: 2vw !important;
+    }
+
+    .recruit-div-wrap {
+        margin: 0 2vw 4vh 0;
+    }
+
+    .recruit-div-title {
+        padding: 3vh 3vw;
+    }
+
+    .recruit-div.page {
+        height: auto;
+    }
+
+    .recruit-img img {
+        float: left;
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    h3 {
+        font-size: 4vw;
+    }
+
+    .header-content img {
+        content: url('../images/sp/recruit-header-sp.jpg');
+    }
+
+    .recruit-introduction {
+        padding: 9vh 10vw 0;
+    }
+
+    .recruit-introduction p {
+        margin-bottom: 0;
+    }
+
+    .recruit-container {
+        padding: 9vh 5vw 0;
+    }
+
+    .recruit-div-title {
+        padding: 3vh 4vw;
+    }
+
+    .recruit-div.page {
+        padding: 0;
+    }
+
+    .recruit-div-wrap {
+        width: 100%;
+        height: auto;
+        margin: 0 0 4vh 0;
+        padding: 0;
+    }
+
+    .recruit_div-content img {
+        float: left;
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .recruit-title.page p {
+        font-size: 4vw !important;
+    }
+}

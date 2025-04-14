@@ -1,0 +1,281 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* business page */
+.business-page-introduction {
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    background-color: #fff;
+    padding: 40px 90px 66px;
+}
+
+.business-page-introduction p {
+    text-align: justify;
+}
+
+.business-page-list {
+    float: left;
+    overflow: hidden;
+    width: 100%;
+}
+
+.business-page-list ul {
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 110px;
+}
+
+.business-page-list ul li {
+    width: 10%;
+    float: left;
+    overflow: hidden;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+.business-page-list ul li a {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.business-page-list ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0%;
+    top: 75%;
+    margin-top: 5px;
+    width: 0%;
+    height: 4px;
+    border-radius: 20px;
+    transition: width 0.5s ease-in-out;
+    background-color: #007e8d;
+}
+
+.business-page-list ul li a:hover::after {
+    width: 100%;
+}
+
+/* web create */
+.web-create-introduction {
+    float: left;
+    overflow: hidden;
+    background: #edf7fe;
+    padding: 100px 90px;
+}
+
+.web-create-content {
+    float: left;
+    overflow: hidden;
+    width: 50%;
+}
+
+.web-create-content h2 {
+    margin-bottom: 50px;
+}
+
+.web-create-content p {
+    letter-spacing: 0.12rem;
+    text-align: justify;
+}
+
+.web-create-content img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    margin-left: 90px;
+    padding: 0;
+}
+
+/* web develop */
+.web-develop-introduction {
+    float: left;
+    overflow: hidden;
+    background: #fff;
+    padding: 100px 90px;
+}
+
+.web-develop-content {
+    float: left;
+    overflow: hidden;
+    width: 50%;
+}
+
+.web-develop-content h2 {
+    margin-bottom: 50px;
+}
+
+.web-develop-content p {
+    letter-spacing: 0.12rem;
+    text-align: justify;
+}
+
+.web-develop-content img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    padding-right: 90px;
+}
+
+/* semiconduction */
+.semiconductor-introduction {
+    float: left;
+    overflow: hidden;
+    background: #edf7fe;
+    padding: 100px 90px;
+}
+
+.semiconductor-content {
+    float: left;
+    overflow: hidden;
+    width: 50%;
+}
+
+.semiconductor-content h2 {
+    margin-bottom: 50px;
+}
+
+.semiconductor-content p {
+    letter-spacing: 0.12rem;
+    text-align: justify;
+}
+
+.semiconductor-content img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    margin-left: 90px;
+    padding: 0;
+}
+
+.web-create-sp {
+    display: none;
+}
+
+.web-develop-sp {
+    display: none;
+}
+
+.semiconductor-sp {
+    display: none;
+}
+
+@media only screen and (min-width:821px) and (max-width: 1366px) {
+    .business-page-list ul li {
+        width: 20%;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    .header-content img {
+        content: url('../images/sp/business-header-sp.jpg');
+    }
+
+    /* business page */
+    .business-page-introduction {
+        padding: 5vh 5vw 9vh;
+    }
+
+    .business-page-list ul {
+        margin-bottom: 9vh;
+    }
+
+    .business-page-list ul li {
+        width: calc(100% / 3);
+    }
+
+    /* web-create */
+    .web-create {
+        display: none;
+    }
+
+    .web-create-sp {
+        display: block;
+    }
+
+    .web-create-introduction {
+        padding: 6vh 5vw 8vh;
+    }
+
+    .web-create-content {
+        width: 100%;
+    }
+
+    .web-create-content h2 {
+        text-align: center;
+        margin-bottom: 6vh;
+    }
+
+    .web-create-content img {
+        margin-left: 0;
+        margin-bottom: 6vh;
+    }
+
+    /* .web-develop */
+    .web-develop-introduction {
+        padding: 6vh 5vw 8vh;
+    }
+
+    .web-develop {
+        display: none;
+    }
+
+    .web-develop-sp {
+        display: block;
+    }
+
+    .web-develop-content {
+        width: 100%;
+    }
+
+    .web-develop-content h2 {
+        text-align: center;
+        margin-bottom: 6vh;
+    }
+
+    .web-develop-content img {
+        padding-right: 0;
+    }
+
+    .web-develop-content img {
+        margin-bottom: 6vh;
+    }
+
+    /* semiconductor */
+    .semiconductor {
+        display: none;
+    }
+
+    .semiconductor-sp {
+        display: block;
+    }
+
+    .semiconductor-introduction {
+        padding: 6vh 5vw 8vh;
+    }
+
+    .semiconductor-content {
+        width: 100%;
+    }
+
+    .semiconductor-content h2 {
+        text-align: center;
+        margin-bottom: 6vh;
+    }
+
+    .semiconductor-content img {
+        margin-left: 0;
+    }
+
+    .semiconductor-content img {
+        margin-bottom: 6vh;
+    }
+}

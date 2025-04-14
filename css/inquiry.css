@@ -1,0 +1,586 @@
+.contact-block {
+  font-size: 62.5%; 
+}
+
+.contact-block {
+  overflow-x: hidden;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+/* Contact Section */
+.contact-block {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 80px 20px 20px;  */
+   /* padding: 122px 328px 215px 96px; */
+   /* padding: 127px 328px 0px 87px; */
+   /* padding: 12.7rem 32.8rem 0rem 8.7rem; */
+    width: 100%; /* Đảm bảo chiếm toàn chiều rộng */
+  float: none; /* Xóa float để tránh xung đột */
+  clear: both; /* Xóa các float trước đó */
+  margin: 0 auto; /* Căn giữa */
+  }
+ 
+  .contact-detail {
+    /* max-width: 1200px; */
+    color:#444444 ;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%; /* Đảm bảo chiếm toàn chiều rộng của container cha */
+  }
+  .contact-text {
+    padding-left: 96px; /* Thêm padding trái 96px */
+    padding-right: 96px; /* Thêm padding phải 96px */
+  }
+  .contact-title {
+    /* font-size: 36px; */
+    font-size: 36px; /* 36px */
+    color: #333;
+    /* margin-bottom: 40px; */
+    margin-bottom: 40px; /* 40px */
+  }
+  
+  .contact-form-container {
+    background-color: #fff;
+    /* padding-left: 241px; */
+    /* padding: 40px; */
+    /* border-radius: 10px; */
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+    /* max-width: 900px; */
+    margin: 0 auto;
+  }
+  
+  .contact-detail h2 {
+    /* font-size: 48px;
+    margin-bottom: 20px; */
+    font-size: 48px; /* 48px */
+  margin-bottom: 76px; /* 20px */
+    text-align: left;
+    margin-top: 123px;
+  }
+  
+  .contact-detail p {
+    /* font-size: 24px; */
+    font-size: 24px; /* 24px */
+    color: #444444;
+    /* margin-bottom: 150px; */
+    margin-bottom: 150px; /* 150px */
+    /* margin-left: 35px; */
+    text-align: left;
+    /* line-height: 41.37px; */
+    line-height: 41.37px; /* 41.37px */
+  }
+
+  .detail-pc {
+    margin-left: 35px;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    /* gap: 67px;
+    max-width: 1254px;
+    margin-left: 241px; */
+    gap: 67px; /* 67px */
+  /* max-width: 1254px; */
+  /* margin-left: 241px; */
+  padding-left: 337px; /* Thêm padding trái 337px */
+  padding-right: 337px; /* Thêm padding phải 337px */
+  margin: 0 auto; /* Căn giữa theo chiều ngang */
+  }
+  .contact-form p {
+    color: #cd2d07;
+    /* font-size: 24px;
+    margin-bottom: 66px; */
+    font-size: 24px; /* 24px */
+  margin-bottom: 66px; /* 66px */
+  }
+  .form-group {
+    display: flex;
+    align-items: center; 
+    /* flex-direction: column;
+    text-align: left; */
+    gap: 55px;
+  }
+  
+  .form-group label {
+    /* font-size: 14px;
+    margin-bottom: 5px; */
+    width: 30%; /* Label chiếm 30% chiều rộng */
+    /* font-size: 24px; */
+    font-size: 24px; /* 24px */
+    text-align: left;
+    margin-bottom: 0; /* Bỏ margin-bottom vì đã dùng flex */
+  }
+  
+  .form-group .required {
+    color: #cd2d07;
+  }
+  
+  .input-wrapper {
+    width: 70%; /* Đảm bảo input-wrapper chiếm 70% giống input */
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Để định vị error-icon */
+  }
+
+  .form-group input,
+  .form-group textarea, .form-group select{
+    /* padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px; */
+  
+    width: 70%; /* Input/select/textarea chiếm 70% chiều rộng */
+    /* padding: 10px;
+    padding-right: 30px; 
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 24px; */
+
+    padding: 10px; /* 10px */
+  padding-right: 30px; /* 30px */
+  border: 1px solid #ddd; /* 1px */
+  border-radius: 5px; /* 5px */
+  font-size: 24px; /* 24px */
+
+    /* font-family: "Noto Serif JP", serif; */
+  }
+  
+  .form-group select {
+    appearance: none; /* Ẩn mũi tên mặc định của trình duyệt */
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjI4MjggNC4yODI4M0w4LjAwMDAzIDguNTY1NjVMMy43MTcyMyA0LjI4MjgzQzMuMzE5NjYgMy44ODU3NyA0LjEyNDgyIDMuMDgwNTkgNC41MjIzOSA0LjI4MjgzTDguMDAwMDMgNy43NjA5NUwxMS40Nzc3IDQuMjgyODNDMTEuODc1MyAzLjA4MDU5IDEyLjY4MDUgMy44ODU3NyAxMi4yODI4IDQuMjgyODNaIiBmaWxsPSIjNjY2Ii8+Cjwvc3ZnPgo=") no-repeat right 10px center; /* Thêm mũi tên tùy chỉnh */
+    /* background-size: 12px; */
+    background-size: 12px; /* 12px */
+    cursor: pointer;
+  }
+  
+  .form-group textarea {
+    resize: none;
+  }
+  .error-message {
+    color: #333333;
+    /* font-size: 18px;
+    margin-top: 5px; */
+    font-size: 18px; /* 18px */
+  margin-top: 5px; /* 5px */
+    text-align: left;
+    display: none; /* Ẩn thông báo lỗi mặc định */
+  }
+  
+  .error-message.active {
+    display: block; /* Hiển thị thông báo lỗi khi có lỗi */
+  }
+
+  .error-icon {
+    position: absolute;
+    right: 33%; /* Đặt cố định right để không phụ thuộc vào chiều rộng */
+
+  top: 25px; /* 25px */
+  /* right: 35%;
+  top: 50%; */
+  transform: translateY(-50%);
+  /* width: 19px;
+  height: 19px; */
+  width: 22px; /* 19px */
+  height: 22px; /* 19px */
+  background-color: #6b6969; /* Nền đen khi không có lỗi */
+  color: #fff;
+  border-radius: 50%;
+  /* font-size: 12px;
+  line-height: 16px; */
+  font-size: 18px; /* 12px */
+  line-height: 20px; /* 16px */
+  text-align: center;
+  font-weight: bold;
+  box-sizing: border-box; /* Đảm bảo kích thước không thay đổi */
+  }
+  
+  .error-icon.active {
+    background-color: #ff0000;
+    /* width: 19px; 
+  height: 19px; */
+  width: 22px; /* 19px */
+  height: 22px; /* 19px */
+  line-height: 20px; /* 16px */
+  /* line-height: 16px; */
+
+  }
+  /* Privacy Policy */
+  .privacy-policy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 10px; */
+    margin-top: 10px; /* 10px */
+  }
+  
+  .privacy-label {
+    display: flex;
+    align-items: center;
+    /* gap: 10px;
+    font-size: 14px; */
+    gap: 10px; /* 10px */
+  font-size: 14px; /* 14px */
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .privacy-label input[type="checkbox"] {
+    /* width: 16px;
+    height: 16px; */
+    width: 16px; /* 16px */
+  height: 16px; /* 16px */
+    cursor: pointer;
+  }
+  
+  .privacy-label span {
+    color: #333333; /* Màu xanh lam giống nút submit */
+    text-decoration: underline;
+    /* font-size: 18px; */
+    font-size: 18px; /* 18px */
+  }
+  
+  .form-buttons {
+    display: flex;
+    gap: 10px; /* 10px */
+    /* gap: 10px; */
+    justify-content: center;
+  }
+  
+  .preview-button,
+  .submit-button {
+    padding: 29px 144px; /* 29px 144px */
+    border: none;
+    border-radius: 40px; /* 40px */
+    font-size: 14px; /* 14px */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .preview-button {
+    background-color: #ccc;
+    color: #fff;
+  }
+  
+  .submit-button {
+    background-color: #1a7f89;
+    color: #fff;
+    height: 85px; /* 85px */
+    width: auto;
+    display: flex;
+    align-items: center;
+    font-size: 32px; /* 32px */
+  }
+  
+  .submit-button:disabled {
+    background-color: #a0a0a0; /* Màu xám khi bị vô hiệu hóa */
+    cursor: not-allowed;
+  }
+  
+  .preview-button:hover {
+    background-color: #bbb;
+  }
+  
+  .submit-button:not(:disabled):hover {
+    background-color: #156a72;
+  }
+
+  .detail-sp {
+    display: none;
+  }
+
+ 
+  /* CSS FOR SMALL DEVICES */
+
+/* Màn hình laptop (1367px - 1850px) */
+@media only screen and (min-width: 1367px) and (max-width: 1850px) {
+  /* html {
+    font-size: 56.25%; 
+  } */
+
+  /* .contact-block {
+    padding: 12.7rem 32.8rem 0rem 8.7rem;
+  } */
+
+  /* .contact-form {
+    max-width: 125.4rem;
+    margin-left: 24.1rem; 
+  } */
+ 
+}
+
+/* Màn hình laptop nhỏ hơn (dưới 1366px) */
+@media only screen and (max-width: 1366px) {
+  /* html {
+    font-size: 50%; 
+  } */
+
+  /* .contact-block{
+    padding: 12.7rem 16.8rem 0rem 8.7rem;
+  } */
+.contact-detail {
+  max-width: 1254px;
+}
+  .contact-form {
+    /* margin-left: 121px; */
+    padding-left: 140px;
+    padding-right: 140px;
+    gap: 50px;
+  }
+
+  .form-group label {
+    width: 40%;
+  }
+}
+
+
+
+/* Màn hình iPad (768px - 1024px) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  
+  /* html {
+    font-size: 43.75%; 
+  } */
+
+  .contact-block {
+    /* padding: 80px 20px 0px 2px; */
+    padding-top: 44px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+  }
+
+  .contact-detail {
+    max-width: 720px; 
+  }
+
+  .contact-detail h2 {
+    font-size: 2rem; 
+    margin-bottom: 20px; 
+    margin-top: 0px;
+  }
+
+  .contact-detail p {
+    /* font-size: 1.8rem;  */
+    margin-bottom: 50px; /* Giảm từ 15rem */
+    line-height: 56px; /* Giảm từ 4.137rem */
+  }
+
+  .contact-text{
+    padding-left: 0px;
+    padding-right: 0px;
+
+  }
+  .contact-form {
+    /* max-width: 50rem;  */
+    margin-left: 0; /* Căn giữa */
+   padding-left: 0px;
+   padding-right: 0px;
+  }
+
+  .contact-form p {
+    /* font-size: 1.8rem;  */
+    margin-bottom: 0px 
+  }
+
+  .form-group {
+    flex-direction: column; /* Chuyển sang dạng cột */
+    gap: 22px; /* Giảm từ 5.5rem */
+  }
+
+  .form-group label {
+    width: 100%; /* Chiếm toàn chiều rộng */
+
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%; /* Chiếm toàn chiều rộng */
+
+   
+  }
+
+  .form-group select {
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjI4MjggNC4yODI4M0w4LjAwMDAzIDguNTY1NjVMMy43MTcyMyA0LjI4MjgzQzMuMzE5NjYgMy44ODU3NyA0LjEyNDgyIDMuMDgwNTkgNC41MjIzOSA0LjI4MjgzTDguMDAwMDMgNy43NjA5NUwxMS40Nzc3IDQuMjgyODNDMTEuODc1MyAzLjA4MDU5IDEyLjY4MDUgMy44ODU3NyAxMi4yODI4IDQuMjgyODNaIiBmaWxsPSIjNjY2Ii8+Cjwvc3ZnPgo=") no-repeat right 0.8rem center;
+    background-size: 1rem; /* Giảm từ 1.2rem */
+  }
+
+  .input-wrapper {
+    width: 100%; 
+  }
+
+  .detail-sp {
+    display: block;
+  }
+  .detail-pc {
+    display: none;
+  }
+
+  .error-icon {
+    right: 8px; /* Điều chỉnh vị trí */
+    
+  }
+
+  /* .error-icon.active {
+    width: 1.8rem;
+    height: 1.8rem;
+    line-height: 1.6rem;
+  } */
+
+  .submit-button {
+    padding: 15px 80px; /* Giảm từ 2.9rem 14.4rem */
+    height: 60px; /* Giảm từ 8.5rem */
+    font-size: 24px; /* Giảm từ 3.2rem */
+  }
+
+
+}
+
+
+/* Màn hình iPhone (dưới 767px) */
+@media only screen and (max-width: 767px) {
+  /* html {
+    font-size: 37.5%;
+  } */
+
+  .contact-block {
+    /* padding: 50px 15px 0px 15px;  */
+padding-bottom: 44px;
+
+  }
+
+  /* .contact-detail {
+    max-width: 620px; 
+  } */
+
+  .contact-detail h2 {
+    /* font-size: 3.8rem; */
+    margin-bottom: 20px;
+margin-top: 0px;
+font-size: 2rem;
+  }
+
+  .contact-detail p {
+    /* font-size: 1.6rem;  */
+    margin-bottom: 0px;
+    /* line-height: 56px;  */
+    letter-spacing: 0px;
+    text-align: justify;
+    font-size: 1rem;
+  }
+
+  .contact-text {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+  .contact-form {
+    max-width: 100%; /* Chiếm toàn chiều rộng */
+    margin-left: 0; /* Căn giữa */
+    gap: 2rem; 
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .contact-form p {
+    /* font-size: 1.6rem;  */
+    margin-bottom: 0px; 
+  }
+
+  .form-group {
+    flex-direction: column; /* Chuyển sang dạng cột */
+    gap: 8px; /* Giảm từ 5.5rem */
+  }
+
+  .form-group label {
+    width: 100%; /* Chiếm toàn chiều rộng */
+    /* font-size: 1.6rem;  */
+    font-size: 1rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%; /* Chiếm toàn chiều rộng */
+    /* font-size: 1.6rem; */
+    padding: 6px; /* Giảm từ 1rem */
+    padding-right: 20px; /* Giảm từ 3rem */
+    font-size: 1rem;
+  }
+
+  .form-group select {
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjI4MjggNC4yODI4M0w4LjAwMDAzIDguNTY1NjVMMy43MTcyMyA0LjI4MjgzQzMuMzE5NjYgMy44ODU3NyA0LjEyNDgyIDMuMDgwNTkgNC41MjIzOSA0LjI4MjgzTDguMDAwMDMgNy43NjA5NUwxMS40Nzc3IDQuMjgyODNDMTEuODc1MyAzLjA4MDU5IDEyLjY4MDUgMy44ODU3NyAxMi4yODI4IDQuMjgyODNaIiBmaWxsPSIjNjY2Ii8+Cjwvc3ZnPgo=") no-repeat right 0.6rem center;
+    background-size: 8px; /* Giảm từ 1.2rem */
+  }
+  .input-wrapper {
+    width: 100%; 
+  }
+
+  .detail-sp {
+    display: block;
+  }
+  .detail-pc {
+    display: none;
+  }
+  .error-icon {
+    right: 10px; /* Điều chỉnh vị trí */
+    top: 19px;
+    width: 19px;
+    height: 19px;
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .error-icon.active {
+    right: 10px; /* Điều chỉnh vị trí */
+    top: 19px;
+    width: 19px;
+    height: 19px;
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .error-message {
+font-size: 1rem;
+  }
+  .privacy-policy {
+    margin-top: 6px; /* Giảm từ 1rem */
+  }
+
+  .privacy-label {
+    gap: 6px; /* Giảm từ 1rem */
+    font-size: 12px; /* Giảm từ 1.4rem */
+  }
+
+  .privacy-label input[type="checkbox"] {
+    width: 14px; /* Giảm từ 1.6rem */
+    height: 14px; /* Giảm từ 1.6rem */
+  }
+
+  .privacy-label span {
+    font-size: 1rem; 
+  }
+
+  .submit-button {
+    /* padding: 12px 50px; */
+    padding: 11px 91px;
+    height: 71px; 
+    font-size: 1.5rem; 
+  }
+}
+
+@media only screen and (max-width: 896px) and (orientation: landscape) {
+  .error-icon {
+    top: 24px;
+  }
+
+  .error-icon.active {
+    top: 24px;
+  }
+}
